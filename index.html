@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HABILIDADES</title>
+    <style>
+        /* Reset de márgenes y paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #e6f2ff, #cce0ff);
+            color: #2f2f2f;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Contenedor principal */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            width: 100%;
+            gap: 20px;
+        }
+
+        /* Barra lateral fija */
+        .sidebar {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 220px;
+            background-color: #4a6d98;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            height: 90vh;
+            overflow-y: auto;
+        }
+
+        .sidebar h1 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .sidebar nav a {
+            display: block;
+            color: #f0f0f0;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #5b7ca1;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar nav a:hover {
+            background-color: #3e4b62;
+        }
+
+        .sidebar nav a.active {
+            background-color: #2a364b;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        /* Estilos del contenido principal */
+        .content {
+            flex: 1;
+            margin-left: 260px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Tarjetas de habilidades */
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-left: 5px solid transparent;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Título de las tarjetas */
+        .card h2 {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        /* Texto de las tarjetas (oculto por defecto) */
+        .card p {
+            color: #555555;
+            font-size: 1em;
+            line-height: 1.6;
+            border-top: 1px solid #e0e0e0;
+            padding-top: 10px;
+            display: none;
+        }
+
+        /* Borde y color de título activo en tarjeta seleccionada */
+        .card.active {
+            border-color: #4a90e2;
+        }
+
+        .card.active h2 {
+            color: #4a90e2;
+            font-weight: bold;
+        }
+
+        /* Mostrar el contenido al expandir la tarjeta */
+        .card.expanded p {
+            display: block;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .sidebar {
+                position: relative;
+                width: 100%;
+                margin-bottom: 20px;
+                height: auto;
+            }
+
+            .content {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Barra lateral fija -->
+        <aside class="sidebar">
+            <h1>HABILIDADES</h1>
+            <nav>
+                <a href="#trabajo-equipo" data-target="trabajo-equipo">Trabajo en Equipo</a>
+                <a href="#responsabilidad" data-target="responsabilidad">Responsabilidad</a>
+                <a href="#organizacion" data-target="organizacion">Organización</a>
+                <a href="#comunicacion" data-target="comunicacion">Comunicación</a>
+                <a href="#resolucion" data-target="resolucion">Resolución de Problemas</a>
+                <a href="#adaptabilidad" data-target="adaptabilidad">Adaptabilidad</a>
+                <a href="#conocimientos" data-target="conocimientos">Conocimientos Técnicos</a>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="content">
+            <!-- Tarjetas de habilidades -->
+            <div class="card" id="trabajo-equipo">
+                <h2>Trabajo en Equipo</h2>
+                <p>Me gusta trabajar en equipo y creo que la cooperación es fundamental para conseguir buenos objetivos. Siempre busco crear un ambiente de confianza en el que cada miembro del equipo pueda expresar sus ideas libremente. La comunicación y la empatía son fundamentales en mi enfoque, por lo que no sólo puedo compartir conocimientos, sino también aprender de los demás y contribuir a la dinámica de equipos de alto rendimiento.</p>
+            </div>
+
+            <div class="card" id="responsabilidad">
+                <h2>Responsabilidad</h2>
+                <p>La responsabilidad es uno de mis valores más importantes. Tomo todos los compromisos en serio, soy consciente del impacto de mis acciones y decisiones y siempre me esfuerzo por alcanzar mis expectativas en todo lo que hago. Esta dedicación me ha permitido ganarme la confianza de mis compañeros y construir relaciones basadas en la confianza y el respeto mutuo.</p>
+            </div>
+
+            <div class="card" id="organizacion">
+                <h2>Organización</h2>
+                <p>La capacidad de organización es una de mis mayores fortalezas. Soy una persona organizada que planifica cuidadosamente para aprovechar al máximo el tiempo y los recursos. Me gusta establecer prioridades en mis obligaciones que me permitan ser eficiente y completarlas perfectamente a tiempo. Esta habilidad también me ayuda a manejar múltiples responsabilidades sin perder el foco en detalles importantes.</p>
+            </div>
+
+            <div class="card" id="comunicacion">
+                <h2>Comunicación</h2>
+                <p>Creo que la comunicación es la clave para cualquier interacción exitosa. Intento expresar mis ideas de forma clara y respetuosa. Además, practico la escucha activa porque creo que escuchar y comprender a los demás es esencial para una comunicación eficaz. Esta habilidad me ayuda a construir relaciones de calidad, resolver conflictos y crear un ambiente de colaboración.</p>
+            </div>
+
+            <div class="card" id="resolucion">
+                <h2>Resolución de Problemas</h2>
+                <p>Ante un problema o situación compleja, tengo la capacidad de analizar cada elemento y ofrecer alternativas de solución. Soy una persona que no se rinde fácilmente ante los obstáculos y supera los desafíos de forma lógica y creativa. Este pensamiento crítico me permite considerar los pros y los contras de cada opción y tomar decisiones que busquen el mejor resultado.</p>
+            </div>
+
+            <div class="card" id="adaptabilidad">
+                <h2>Adaptabilidad</h2>
+                <p>Sé que el cambio es constante en la vida, y por ello me considero una persona adaptable que puede adaptarse rápidamente a nuevas situaciones y entornos. Creo que todo cambio es una oportunidad para aprender y crecer. Esta adaptabilidad me ha permitido afrontar diferentes experiencias y aprender a pensar en la resiliencia y la flexibilidad como herramientas imprescindibles en cualquier ámbito.</p>
+            </div>
+
+            <div class="card" id="conocimientos">
+                <h2>Conocimientos Técnicos</h2>
+                <p>Además de las habilidades interpersonales, también tengo conocimientos en  herramientas tecnológicas que me permiten resolver problemas de forma analítica. Tengo experiencia usando Matlab para análisis y simulación de datos, y usando PSeInt para desarrollar algoritmos de pseudocódigo lo que me ha ayudado a fortalecer mi pensamiento lógico. También he utilizado Visual Studio Code en HTML, que permite diseñar y modificar interfaces web de forma rudimentaria. Estos programas han despertado mi interés en la programación y como esta podría ayudar en todos los campos, siempre estoy abierto a aprender nuevas tecnologías porque creo que es importante mantenerse al día con las últimas novedades del mundo en constante evolución.</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Selección de enlaces en la barra lateral y tarjetas
+        const navLinks = document.querySelectorAll('.sidebar nav a');
+        const cards = document.querySelectorAll('.card');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                
+                // Eliminar la clase 'active' de todos los enlaces y tarjetas
+                navLinks.forEach(nav => nav.classList.remove('active'));
+                cards.forEach(card => card.classList.remove('active', 'expanded'));
+
+                // Añadir clase 'active' al enlace y tarjeta seleccionados
+                this.classList.add('active');
+                const targetId = this.getAttribute('data-target');
+                const targetCard = document.getElementById(targetId);
+                targetCard.classList.add('active', 'expanded');
+
+                // Desplazamiento suave a la tarjeta seleccionada
+                targetCard.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Expandir/colapsar contenido de la tarjeta al hacer clic en el título
+        cards.forEach(card => {
+            const title = card.querySelector('h2');
+            title.addEventListener('click', () => {
+                card.classList.toggle('expanded');
+            });
+        });
+    </script>
+</body>
+</html>
